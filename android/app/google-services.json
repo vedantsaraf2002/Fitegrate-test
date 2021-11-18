@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "53566525681",
+    "project_id": "fitegrate-7dc75",
+    "storage_bucket": "fitegrate-7dc75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53566525681:android:69be6c9b2e43ed9b851950",
+        "android_client_info": {
+          "package_name": "com.example.fitegrate_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53566525681-2g4neflncbqdtcifi2bsm8e2mi7fp516.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitegrate_project",
+            "certificate_hash": "fe22b73721b2852ad265d9b1c2a5b3b2651b542e"
+          }
+        },
+        {
+          "client_id": "53566525681-m6snqnsnvbn5qomqlmcts7dm4b4pqn9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIve9OJ6rR-6wSQgwnPKszmw3Pq_301jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53566525681-m6snqnsnvbn5qomqlmcts7dm4b4pqn9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
