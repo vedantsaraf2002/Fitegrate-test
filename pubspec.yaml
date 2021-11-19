@@ -38,6 +38,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   circular_countdown_timer: ^0.2.0
   video_player: ^2.2.6
+  cloud_firestore: ^3.1.0
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 //import 'package:fitegrate_project/rounded_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitegrate_project/provider/Database.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -389,6 +390,7 @@ bool _issecure2=true;
   }
 
   void _register() async {
+    String name = _nameController.text.trim();
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
     String confirmpassword = _confpasswordController.text.trim();
@@ -397,6 +399,8 @@ bool _issecure2=true;
         final User? user = (await _auth.createUserWithEmailAndPassword(
                 email: email, password: password))
             .user;
+          await DatabaseService().addName(name,user!.uid);
+          print(user.uid);
         setState(() {
           if (user != null) {
             Fluttertoast.showToast(msg: "user created");
