@@ -86,6 +86,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
+                     cursorColor: Colors.black,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
@@ -135,7 +136,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.emailAddress,
                     obscureText: _issecure,
-                    
+                     cursorColor: Colors.black,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
                       color: Colors.black,

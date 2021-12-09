@@ -19,11 +19,12 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.white60,
       appBar: AppBar(
-        title: Text('Profile'),
+        backgroundColor: Colors.orange[400],
+        title: Text('Profile', style: TextStyle(color: Colors.black),),
         centerTitle: true,
         actions: [
           TextButton(
-            child: Text('Logout'),
+            child: Text('Logout', style: TextStyle(color: Colors.black),),
             onPressed: () {
               final provider =
                   Provider.of<GoogleSignInProvider>(context, listen: false);

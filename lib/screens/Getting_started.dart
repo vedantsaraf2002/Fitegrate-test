@@ -14,6 +14,9 @@ class _GetStartedState extends State<GetStarted> {
   String gender= 'pnts',age='Null',height='Null',weight='Null',phno='Null';
   
   confirm_details() async{
+
+    
+
     if(_formKey.currentState!.validate()){
       setState(() {
         
@@ -30,9 +33,12 @@ class _GetStartedState extends State<GetStarted> {
       //     _isloading = false;
       //   });
       // });
-      Navigator.pushReplacement(context, MaterialPageRoute(
-            builder: (context) => DashBoard(),
-          ));
+      // Navigator.pushReplacement(context, MaterialPageRoute(
+      //       builder: (context) => DashBoard(),
+      //     ));
+
+      Navigator.pushNamed(context, 'Dashboard');
+        
     }
   }
   @override
@@ -80,6 +86,7 @@ class _GetStartedState extends State<GetStarted> {
                         //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                       ),
                       keyboardType: TextInputType.name,
+                       cursorColor: Colors.black,
                       textInputAction: TextInputAction.next,
                     ),
                     ),
@@ -115,6 +122,7 @@ class _GetStartedState extends State<GetStarted> {
                         //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                       ),
                       keyboardType: TextInputType.name,
+                       cursorColor: Colors.black,
                       textInputAction: TextInputAction.next,
                     ),
                     ),
@@ -150,6 +158,7 @@ class _GetStartedState extends State<GetStarted> {
                         //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                       ),
                       keyboardType: TextInputType.name,
+                       cursorColor: Colors.black,
                       textInputAction: TextInputAction.next,
                     ),
                     ),
@@ -185,6 +194,7 @@ class _GetStartedState extends State<GetStarted> {
                         //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                       ),
                       keyboardType: TextInputType.name,
+                       cursorColor: Colors.black,
                       textInputAction: TextInputAction.next,
                     ),
                     ),
@@ -220,6 +230,7 @@ class _GetStartedState extends State<GetStarted> {
                         //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                       ),
                       keyboardType: TextInputType.name,
+                      cursorColor: Colors.black,
                       textInputAction: TextInputAction.next,
                       ),
                     ),
