@@ -12,7 +12,7 @@ import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/forgotpassword.dart';
 import 'package:fitegrate_project/screens/healthassessment.dart';
 import 'package:fitegrate_project/screens/home.dart';
-
+import 'package:fitegrate_project/screens/otp_authentication.dart';
 import 'package:fitegrate_project/screens/pre-requisite.dart';
 import 'package:fitegrate_project/screens/report.dart';
 import 'package:fitegrate_project/screens/sign_up.dart';
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
         'SpotJog':(context) => SpotJog(),
         'CrossToeTouch':(context) => CrossToeTouch(),
         'VideoAssessmentBalance':(context) => VideoAssessmentBalance(),
-       
+        'OtpVerification':(context) => OtpVerification(),
         'ShoulderRotation':(context) => ShoulderRotation(),
         'FullArmCircles':(context) => FullArmCircles(),
         'HipCircle':(context) => HipCircle(),
