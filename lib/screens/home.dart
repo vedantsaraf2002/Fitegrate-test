@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
+import 'package:fitegrate_project/screens/sign_in.dart';
 //import 'package:fitegrate_project/screens/dashboard.dart';
 //import 'package:fitegrate_project/screens/profile.dart';
 //import 'package:fitegrate_project/screens/sign_in.dart';
@@ -15,11 +16,11 @@ class HomePage extends StatelessWidget {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
             } else if (snapshot.hasData) {
-              return MyStatefulWidget();
+              return GetStarted();
             } else if (snapshot.hasError) {
               return Center(child: Text('Something Went Wrong!'));
             } else {
-              return GetStarted();
+              return SignIn();
             }
           }));
 }
