@@ -2,7 +2,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/Database.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
-import 'package:fitegrate_project/screens/verify.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -409,11 +408,11 @@ bool _issecure2=true;
         setState(() {
           if (user != null) {
             Fluttertoast.showToast(msg: "user created");
-           // Navigator.pushNamed(context, 'SignIn');
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => VerifyScreen()),
-            );
+            Navigator.pushNamed(context, 'SignIn');
+            // Navigator.pushReplacement(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => SignIn()),
+            // );
           }
         });
       } catch (e) {
