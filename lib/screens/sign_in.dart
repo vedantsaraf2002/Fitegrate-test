@@ -179,7 +179,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, 'forgotpassword'),
+                onTap: () => Navigator.pushNamed(context, 'newforgotpassword'),
                 child: Container(
                   child: Text(
                     'Forgot Password',
