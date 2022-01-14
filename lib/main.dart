@@ -12,6 +12,7 @@ import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/forgotpassword.dart';
 import 'package:fitegrate_project/screens/healthassessment.dart';
 import 'package:fitegrate_project/screens/home.dart';
+import 'package:fitegrate_project/screens/newforgotpassword.dart';
 import 'package:fitegrate_project/screens/otp_authentication.dart';
 import 'package:fitegrate_project/screens/pre-requisite.dart';
 import 'package:fitegrate_project/screens/report.dart';
@@ -58,7 +59,8 @@ class MyApp extends StatelessWidget {
         'Getting_Started': (context) => GetStarted(),
         'Dashboard':(context) => DashBoard(),
         'BottomNavigation':(context) => MyStatefulWidget(),
-        'forgotpassword':(context) => forgotpassword(),
+        //'forgotpassword':(context) => forgotpassword(),
+         'newforgotpassword':(context) => NewForgotPassword(),
         'HealthAssessment':(context) => HealthAssessment(),
         'PreRequisite':(context) => PreRequisite(),
         'SpotJog':(context) => SpotJog(),
