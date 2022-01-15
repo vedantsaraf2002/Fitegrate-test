@@ -82,43 +82,6 @@ bool _issecure2=true;
                 height: size.height * 0.02,
               ),
 
-              Container(
-                height: size.height * 0.065,
-                width: size.width * 0.8,
-                decoration: BoxDecoration(
-                  color: Colors.orange[300],
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Center(
-                  child: TextField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(
-                          Icons.person_outline,
-                          size: 28,
-                          color: Colors.black87,
-                        ),
-                      ),
-                      hintText: 'Name',
-                      hintStyle: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                    keyboardType: TextInputType.name,
-                     cursorColor: Colors.black,
-                    textInputAction: TextInputAction.next,
-                  ),
-                ),
-              ),
             
 
               SizedBox(
@@ -403,8 +366,8 @@ bool _issecure2=true;
         final User? user = (await _auth.createUserWithEmailAndPassword(
                 email: email, password: password))
             .user;
-          await DatabaseService().addName(name,user!.uid);
-         // print(user.uid);
+           DatabaseService().enterUID(user!.uid);
+          print(user.uid);
         setState(() {
           if (user != null) {
             Fluttertoast.showToast(msg: "user created");
