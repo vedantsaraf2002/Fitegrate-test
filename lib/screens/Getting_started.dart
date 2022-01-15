@@ -1,3 +1,4 @@
+import 'package:fitegrate_project/provider/Database.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -8,26 +9,32 @@ class GetStarted extends StatefulWidget {
 }
 
 class _GetStartedState extends State<GetStarted> {
-  final _formKey = GlobalKey<FormState>();
-  //int age=0,height=0,weight=0;
-  //Long phno;
-  String gender= 'pnts',age='Null',height='Null',weight='Null',phno='Null';
+  // final _formKey = GlobalKey<FormState>();
+  bool _isloading = false;
+  String name='Null',gender= 'Null',age='Null',height='Null',weight='Null',phno='Null';
   
+
   confirm_details() async{
 
-    
-
-    if(_formKey.currentState!.validate()){
-      setState(() {
-        
-      });
+    // if(_formKey.currentState!.validate()){
+      // setState(() {
+      //   _isloading=true;
+      // });
       Map<String,String> basicinfoMap = {
+        "name" : name,
         "age" : age,
         "gender" : gender,
         "height" : height,
         "weight" : weight,
         "ph number" : phno
       };
+
+       await DatabaseService().addBasicData(basicinfoMap).then((value){
+        setState(() {
+          _isloading = false;
+        });
+      });
+
       // await databaseService.addQuestionData(basicinfoMap).then((value){
       //   setState(() {
       //     _isloading = false;
@@ -37,9 +44,12 @@ class _GetStartedState extends State<GetStarted> {
       //       builder: (context) => DashBoard(),
       //     ));
 
-      Navigator.pushNamed(context, 'Dashboard');
-        
-    }
+     // Navigator.pushNamed(context, 'Dashboard');
+
+    // }
+    Navigator.pushReplacement(context, MaterialPageRoute(
+                builder: (context) => DashBoard(),
+              ));
   }
   @override
   Widget build(BuildContext context) {
@@ -52,11 +62,53 @@ class _GetStartedState extends State<GetStarted> {
         elevation: 0.0,
        // brightness: Brightness.light,
       ),
-      body: Center(
+      body: _isloading ? Container(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ) :Center(
         child: Form(
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Container(
+                  height: size.height * 0.065,
+                  width: size.width * 0.8,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[350],
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Stack(children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 30,top: 10),
+                      height: size.height * 0.065,
+                      width: size.width *0.4,
+                      child: Text('Name',style: TextStyle(fontSize: 25),),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 200),
+                      height: size.height * 0.065,
+                      width: size.width * 0.8,
+                      child: TextFormField(
+                        validator: (value) => value!.isEmpty ? "Enter the name" : null,
+                        style: TextStyle(fontSize: 25),
+                        onChanged: (value) {
+                          setState(() {
+                            name = value;
+                          });
+                          print(name);
+                        },
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          //contentPadding:  EdgeInsets.only(left: 200,top: 10),
+                        ),
+                        keyboardType: TextInputType.name,
+                        textInputAction: TextInputAction.next,
+                      ),
+                    ),
+                  ],),
+                ),
+                SizedBox(height: 40),
                 Container(
                   height: size.height * 0.065,
                   width: size.width * 0.8,
@@ -79,7 +131,10 @@ class _GetStartedState extends State<GetStarted> {
                         validator: (value) => value!.isEmpty ? "Enter the age" : null,
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
-                        age = value;
+                        setState(() {
+                          age = value;
+                        });
+                        print(age);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -115,7 +170,10 @@ class _GetStartedState extends State<GetStarted> {
                         validator: (value) => value!.isEmpty ? "Enter the Gender" : null,
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
-                        gender = value;
+                        setState(() {
+                          gender = value;
+                        });
+                        print(gender);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -151,7 +209,10 @@ class _GetStartedState extends State<GetStarted> {
                         validator: (value) => value!.isEmpty ? "Enter the height" : null,
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
-                        height = value;
+                        setState(() {
+                          height = value;
+                        });
+                        print(height);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -187,7 +248,10 @@ class _GetStartedState extends State<GetStarted> {
                         validator: (value) => value!.isEmpty ? "Enter the weight" : null,
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
-                        weight = value;
+                        setState(() {
+                          weight = value;
+                        });
+                        print(weight);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -223,7 +287,10 @@ class _GetStartedState extends State<GetStarted> {
                         validator: (value) => value!.isEmpty ? "Enter the Phone number" : null,
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
-                        phno = value;
+                        setState(() {
+                          phno = value;
+                        });
+                        print(phno);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
