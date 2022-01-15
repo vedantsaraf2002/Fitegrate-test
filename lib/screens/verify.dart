@@ -1,5 +1,5 @@
 import 'dart:async';
-
+//verification mail
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
