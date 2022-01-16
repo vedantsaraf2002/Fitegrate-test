@@ -13,6 +13,7 @@ bool loginwith = false;
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
+  static bool isLoginwith=false;
 
   @override
   _SignInState createState() => _SignInState();
@@ -304,6 +305,7 @@ class _SignInState extends State<SignIn> {
   }
 
   _signInWithEmailAndPassword() async {
+    
     try {
       final User? user = (await _firebaseAuth.signInWithEmailAndPassword(
               email: _emailController.text.trim(),
@@ -312,7 +314,7 @@ class _SignInState extends State<SignIn> {
       if (user != null) {
         setState(() {
           Fluttertoast.showToast(msg: "Signed In Sucessfully");
-
+SignIn.isLoginwith=true;
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => HomePage()),
@@ -322,5 +324,6 @@ class _SignInState extends State<SignIn> {
     } catch (e) {
       Fluttertoast.showToast(msg: e.toString());
     }
+
   }
 }

@@ -171,7 +171,7 @@ class _DashBoardState extends State<DashBoard> {
                               children: [
                                 TextButton(
                                     onPressed: () {
-                                      // Navigator.pushNamed(context, 'PreRequisite');
+                                      Navigator.pushNamed(context, 'PreRequisite');
                                     },
                                     child: Text(
                                       'Cardio',
@@ -199,7 +199,7 @@ class _DashBoardState extends State<DashBoard> {
                               children: [
                                 TextButton(
                                     onPressed: () {
-                                      // Navigator.pushNamed(context, 'SpotJog');
+                                      Navigator.pushNamed(context, 'SpotJog');
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(
@@ -277,7 +277,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'PreRequisite');
+                        Navigator.pushNamed(context, 'VideoAssessmentBalance');
                         // main();
                         // UserCredential userCredential = await auth.signInAnonymously();
                         // print(userCredential);

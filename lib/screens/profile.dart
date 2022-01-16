@@ -55,35 +55,21 @@ class _ProfileState extends State<Profile> {
                 padding: EdgeInsets.fromLTRB(30, 0, 30, 5),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
+                    
                         Container(
-                          //margin: EdgeInsets.all(10),
-                          padding: EdgeInsets.all(20),
-                           color: Colors.grey[350],
-                          child: Column(
-                            
-                            children: [
-                              Text('Phone Number',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 18),),
-                              Text('9876543210',style: TextStyle(color: Colors.black, fontSize: 16),)
-                            ],
-                          ),
-                        ),
-      
-                        Container(
-                          padding: EdgeInsets.all(20),
-                           //margin: EdgeInsets.all(10),
-                          color: Colors.grey[350],
-                          child: Column(
-                            children: [
-                              Text('Phone Number',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 18),),
-                              Text('9876543210',style: TextStyle(color: Colors.black,fontSize: 16),)
-                            ],
-                          ),
-                        ),
-                      ],
+                      color: Colors.grey[350],
+                      height: size.height*0.09,
+                      width: size.width,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 10,),
+                          Icon(Icons.card_membership_outlined, color: Colors.black, size: 40,),
+                           SizedBox(width: 10,),
+                          Text('Phone number', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),)
+                        ],
+                      ),
                     ),
+                      
       
                     SizedBox(height: 20,),
       

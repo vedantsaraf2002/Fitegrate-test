@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitegrate_project/screens/sign_in.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -28,9 +30,23 @@ idToken: googleAuth.idToken,
 }
   notifyListeners();
 }
+
 Future logout() async{
-  await FirebaseAuth.instance.signOut();
-  await googleSignIn.disconnect();
   
+  if (SignIn.isLoginwith==true){
+    await FirebaseAuth.instance.signOut();
+    
+}
+if(SignIn.isLoginwith==false){
+  
+await FirebaseAuth.instance.signOut();
+await googleSignIn.disconnect();
+  
+}
+  
+
+  
+  
+
 }
 }
