@@ -1,4 +1,5 @@
 import 'package:fitegrate_project/provider/Database.dart';
+import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -314,6 +315,7 @@ class _GetStartedState extends State<GetStarted> {
                   child: TextButton(
                     onPressed: () {
                       confirm_details();
+                      
                     },
                   child: Text(
                     'Confirm Details',
