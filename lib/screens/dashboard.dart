@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,14 +13,17 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+
   @override
   Widget build(BuildContext context) {
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
      final  user = FirebaseAuth.instance.currentUser!;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.orange[400],
+        
         title: Text('Hi, '+ user.displayName!),
         actions: [
           IconButton(
@@ -171,7 +175,7 @@ class _DashBoardState extends State<DashBoard> {
                               children: [
                                 TextButton(
                                     onPressed: () {
-                                      Navigator.pushNamed(context, 'PreRequisite');
+                                      // Navigator.pushNamed(context, 'PreRequisite');
                                     },
                                     child: Text(
                                       'Cardio',
@@ -199,7 +203,7 @@ class _DashBoardState extends State<DashBoard> {
                               children: [
                                 TextButton(
                                     onPressed: () {
-                                      Navigator.pushNamed(context, 'SpotJog');
+                                      // Navigator.pushNamed(context, 'SpotJog');
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(
@@ -277,7 +281,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'VideoAssessmentBalance');
+                        Navigator.pushNamed(context, 'PreRequisite');
                         // main();
                         // UserCredential userCredential = await auth.signInAnonymously();
                         // print(userCredential);
@@ -314,7 +318,7 @@ class _DashBoardState extends State<DashBoard> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'BottomNavigation');
+                       // Navigator.pushNamed(context, 'BottomNavigation');
                       },
                       child: Text(
                         'Upcoming Sessions',
