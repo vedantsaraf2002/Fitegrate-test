@@ -29,6 +29,7 @@ class _ProfileState extends State<Profile> {
               final provider =
                   Provider.of<GoogleSignInProvider>(context, listen: false);
               provider.logout();
+              Navigator.pushNamed(context, 'SignIn');
             },
           )
         ],
