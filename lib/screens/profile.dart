@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
+import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +44,7 @@ Navigator.pushNamed(context, 'SignIn');
              
               SizedBox(height: 8),
               Text(
-                 user.displayName!,
+                 GetStarted.name,
                 style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
