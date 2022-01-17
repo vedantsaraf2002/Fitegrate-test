@@ -96,6 +96,47 @@ bool _issecure2=true;
                 ),
                 child: Center(
                   child: TextField(
+                    controller: _nameController,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(
+                          Icons.email_outlined,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      hintText: 'Name',
+                      hintStyle: TextStyle(
+                          color: Colors.black87,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                    keyboardType: TextInputType.name,
+                    textInputAction: TextInputAction.next,
+                  ),
+                ),
+              ),
+            
+
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              Container(
+                height: size.height * 0.065,
+                width: size.width * 0.8,
+                decoration: BoxDecoration(
+                  color: Colors.orange[300],
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Center(
+                  child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -126,69 +167,7 @@ bool _issecure2=true;
                 ),
               ),
 
-              // SizedBox(
-              //   height: size.height * 0.02,
-              // ),
-
-              // Container(
-              //   height: size.height * 0.065,
-              //   width: size.width * 0.6,
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.circular(22),
-              //     color: Colors.black87,
-              //   ),
-              //   child: TextButton(
-              //     onPressed: ()  {
-              //       Navigator.pushNamed(context, 'OtpVerification');
-              //     },
-              //     child: Text(
-              //       'Send OTP',
-              //       style: TextStyle(color: Colors.orange[300], fontSize: 20),
-              //       //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
-              //     ),
-              //   ),
-              // ),
-
-              // SizedBox(
-              //   height: size.height * 0.02,
-              // ),
-              // Container(
-              //   height: size.height * 0.065,
-              //   width: size.width * 0.8,
-              //   decoration: BoxDecoration(
-              //     color: Colors.orange[300],
-              //     borderRadius: BorderRadius.circular(30),
-              //   ),
-              //   child: Center(
-              //     child: TextField(
-              //       controller: _confpasswordController,
-              //       decoration: InputDecoration(
-              //         border: InputBorder.none,
-              //         //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-              //         prefixIcon: Padding(
-              //           padding: const EdgeInsets.symmetric(horizontal: 20),
-              //           child: Icon(
-              //             Icons.password_outlined,
-              //             size: 28,
-              //             color: Colors.black87,
-              //           ),
-              //         ),
-              //         hintText: 'Enter OTP',
-              //         hintStyle: TextStyle(
-              //             color: Colors.black87,
-              //             fontSize: 18,
-              //             fontWeight: FontWeight.bold),
-              //       ),
-              //       style: TextStyle(
-              //           color: Colors.black87,
-              //           fontSize: 18,
-              //           fontWeight: FontWeight.bold),
-              //       keyboardType: TextInputType.number,
-              //       obscureText: true,
-              //       textInputAction: TextInputAction.next,
-              //     ),
-              //   ),
-              // ),
+              
 
               SizedBox(
                 height: size.height * 0.02,
