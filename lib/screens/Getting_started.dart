@@ -17,10 +17,7 @@ class _GetStartedState extends State<GetStarted> {
 
   confirm_details() async{
 
-    // if(_formKey.currentState!.validate()){
-      // setState(() {
-      //   _isloading=true;
-      // });
+    
       Map<String,String> basicinfoMap = {
         "name" : name,
         "age" : age,
@@ -36,22 +33,7 @@ class _GetStartedState extends State<GetStarted> {
         });
       });
 
-      // await databaseService.addQuestionData(basicinfoMap).then((value){
-      //   setState(() {
-      //     _isloading = false;
-      //   });
-      // });
-      // Navigator.pushReplacement(context, MaterialPageRoute(
-      //       builder: (context) => DashBoard(),
-      //     ));
-
-     // Navigator.pushNamed(context, 'Dashboard');
-
-    // }
-    // Navigator.pushReplacement(context, MaterialPageRoute(
-    //             builder: (context) => MyStatefulWidget(),
-    //           ));
-
+      
     Navigator.pushNamed(context, 'BottomNavigation');
 
   }

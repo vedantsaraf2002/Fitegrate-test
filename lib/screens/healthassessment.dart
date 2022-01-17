@@ -365,7 +365,7 @@ class _HealthAssessmentState extends State<HealthAssessment> {
             ),
           ),
 
-          // paaaaaaaaaaaaaaaaaaartttttttttt 2222222222222222222222222222222222222222
+         
 
           Padding(
               padding: const EdgeInsets.fromLTRB(20, 15, 15, 10),
@@ -374,8 +374,7 @@ class _HealthAssessmentState extends State<HealthAssessment> {
                   color: Colors.grey[400],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                // height: size.height * 0.15,
-                // width: size.width * 0.95,
+                
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(20, 15, 15, 0),
                   child: Column(
