@@ -48,9 +48,12 @@ class _GetStartedState extends State<GetStarted> {
      // Navigator.pushNamed(context, 'Dashboard');
 
     // }
-    Navigator.pushReplacement(context, MaterialPageRoute(
-                builder: (context) => DashBoard(),
-              ));
+    // Navigator.pushReplacement(context, MaterialPageRoute(
+    //             builder: (context) => MyStatefulWidget(),
+    //           ));
+
+    Navigator.pushNamed(context, 'BottomNavigation');
+
   }
   @override
   Widget build(BuildContext context) {
