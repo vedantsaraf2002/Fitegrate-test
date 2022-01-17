@@ -93,7 +93,7 @@ class _DashBoardState extends State<DashBoard> {
                       padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //crossAxisAlignment: CrossAxisAlignment.,
+                        
                         children: [
                           Text(
                             'WEIGHT: ',
@@ -175,7 +175,7 @@ class _DashBoardState extends State<DashBoard> {
                               children: [
                                 TextButton(
                                     onPressed: () {
-                                      // Navigator.pushNamed(context, 'PreRequisite');
+                                      
                                     },
                                     child: Text(
                                       'Cardio',
@@ -203,7 +203,7 @@ class _DashBoardState extends State<DashBoard> {
                               children: [
                                 TextButton(
                                     onPressed: () {
-                                      // Navigator.pushNamed(context, 'SpotJog');
+                                      
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(
@@ -252,9 +252,7 @@ class _DashBoardState extends State<DashBoard> {
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, 'HealthAssessment');
-                        // main();
-                        // UserCredential userCredential = await auth.signInAnonymously();
-                        // print(userCredential);
+                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
@@ -264,10 +262,10 @@ class _DashBoardState extends State<DashBoard> {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
-                            //fontWeight: FontWeight.normal,
+                            
                           ),
                           textAlign: TextAlign.center,
-                          //style: kBodyText.copyWith(fontWeight: FontWeight.bold)),
+                          
                         ),
                       ),
                     ),
@@ -282,9 +280,7 @@ class _DashBoardState extends State<DashBoard> {
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, 'PreRequisite');
-                        // main();
-                        // UserCredential userCredential = await auth.signInAnonymously();
-                        // print(userCredential);
+                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),

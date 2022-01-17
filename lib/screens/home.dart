@@ -2,9 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
-//import 'package:fitegrate_project/screens/dashboard.dart';
-//import 'package:fitegrate_project/screens/profile.dart';
-//import 'package:fitegrate_project/screens/sign_in.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

@@ -221,53 +221,11 @@ class _SignInState extends State<SignIn> {
                       
                     },
                   ),
-                  // SizedBox(
-                  //   width: size.height * 0.08,
-                  // ),
-                  // SignInButton(
-                  //   Buttons.Facebook,
-                  //   //mini: true,
-                  //   onPressed: () {},
-                  // ),
+                  
                 ],
               ),
 
-              //     Container(
-              //   height: size.height * 0.065,
-              //   width: size.width * 0.6,
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.circular(22),
-              //     color: Colors.orange[400],
-              //   ),
-              //   child: TextButton(
-              //     onPressed: () {
-              //       // Navigator.pushNamed(context, 'BottomNavigation');
-              //       final provider =
-              //           Provider.of<GoogleSignInProvider>(context, listen: false);
-              //           provider.googleLogin();
-              //     },
-              //     child: Text(
-              //       'Sign In with google',
-              //       style: TextStyle(color: Colors.white, fontSize: 20),
-              //     ),
-              //   ),
-              // ),
-
-              // SizedBox(
-              //   width: size.width * 0.10,
-              // ),
-
-              // _buildSocialBtn(
-              //   () {
-              //     final provider =
-              //       Provider.of<GoogleSignInProvider>(context, listen: false);
-              //       provider.googleLogin();
-              //   },
-              //   AssetImage(
-              //     'assets/Logos/google.jpg',
-
-              //   ),
-              // ),
+              
 
               SizedBox(
                 height: size.height * 0.02,
