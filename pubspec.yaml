@@ -39,6 +39,9 @@ dependencies:
   circular_countdown_timer: ^0.2.0
   video_player: ^2.2.6
   cloud_firestore: ^3.1.0
+  percent_indicator: ^3.4.0
+  shared_preferences: ^2.0.12
+  after_layout: ^1.1.0
 
 dev_dependencies:
   flutter_test:

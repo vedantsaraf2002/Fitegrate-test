@@ -4,7 +4,8 @@ import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class GetStarted extends StatefulWidget {
-  const GetStarted({Key? key}) : super(key: key);
+   GetStarted({Key? key}) : super(key: key);
+  
   @override
   _GetStartedState createState() => _GetStartedState();
 }
@@ -41,6 +42,7 @@ class _GetStartedState extends State<GetStarted> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white, 
       appBar: AppBar(
         title: Text('Enter Your Details',style: TextStyle(fontSize: 30,color: Colors.black),),
         centerTitle: true,

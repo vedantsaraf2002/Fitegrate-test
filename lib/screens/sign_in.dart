@@ -275,7 +275,7 @@ class _SignInState extends State<SignIn> {
 SignIn.isLoginwith=true;
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()),
+            MaterialPageRoute(builder: (context) => Splash()),
           );
         });
       }
