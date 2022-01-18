@@ -65,7 +65,7 @@ class _DashBoardState extends State<DashBoard> {
                                 fontSize: 15),
                           ),
                           Text(
-                            '20 yrs',
+                            GetStarted.age,
                             style: TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class _DashBoardState extends State<DashBoard> {
                                 fontSize: 15),
                           ),
                           Text(
-                            'Female',
+                            GetStarted.gender,
                             style: TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold,
@@ -105,7 +105,7 @@ class _DashBoardState extends State<DashBoard> {
                                 fontSize: 15),
                           ),
                           Text(
-                            '50 kgs',
+                            GetStarted.weight,
                             style: TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold,
@@ -122,7 +122,7 @@ class _DashBoardState extends State<DashBoard> {
                                 fontSize: 15),
                           ),
                           Text(
-                            '155 cms',
+                            GetStarted.height,
                             style: TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold,
