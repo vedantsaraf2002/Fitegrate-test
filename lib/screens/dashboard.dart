@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,8 @@ class _DashBoardState extends State<DashBoard> {
       appBar: AppBar(
         backgroundColor: Colors.orange[400],
         
-        title: Text('Hi, '+ user.displayName!),
+        //title: Text('Hi, '+ user.displayName!),
+        title: Text('Hi, '+ GetStarted.name),
         actions: [
           IconButton(
             onPressed: () {},

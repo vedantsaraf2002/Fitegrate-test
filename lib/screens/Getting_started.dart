@@ -4,28 +4,31 @@ import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class GetStarted extends StatefulWidget {
-   GetStarted({Key? key}) : super(key: key);
+
+  const GetStarted({Key? key}) : super(key: key);
+   static String name='Null',gender= 'Null',age='Null',height='Null',weight='Null',phno='Null';
   
   @override
   _GetStartedState createState() => _GetStartedState();
+  
 }
 
 class _GetStartedState extends State<GetStarted> {
   // final _formKey = GlobalKey<FormState>();
   bool _isloading = false;
-  String name='Null',gender= 'Null',age='Null',height='Null',weight='Null',phno='Null';
+  //static String name='Null',gender= 'Null',age='Null',height='Null',weight='Null',phno='Null';
   
 
   confirm_details() async{
 
     
       Map<String,String> basicinfoMap = {
-        "name" : name,
-        "age" : age,
-        "gender" : gender,
-        "height" : height,
-        "weight" : weight,
-        "ph number" : phno
+        "name" : GetStarted.name,
+        "age" : GetStarted.age,
+        "gender" : GetStarted.gender,
+        "height" : GetStarted.height,
+        "weight" : GetStarted.weight,
+        "ph number" : GetStarted.phno
       };
 
        await DatabaseService().addBasicData(basicinfoMap).then((value){
@@ -82,9 +85,9 @@ class _GetStartedState extends State<GetStarted> {
                         style: TextStyle(fontSize: 25),
                         onChanged: (value) {
                           setState(() {
-                            name = value;
+                            GetStarted.name = value;
                           });
-                          print(name);
+                          print(GetStarted.name);
                         },
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -120,9 +123,9 @@ class _GetStartedState extends State<GetStarted> {
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
                         setState(() {
-                          age = value;
+                          GetStarted.age = value;
                         });
-                        print(age);
+                        print(GetStarted.age);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -159,9 +162,9 @@ class _GetStartedState extends State<GetStarted> {
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
                         setState(() {
-                          gender = value;
+                          GetStarted.gender = value;
                         });
-                        print(gender);
+                        print(GetStarted.gender);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -198,9 +201,9 @@ class _GetStartedState extends State<GetStarted> {
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
                         setState(() {
-                          height = value;
+                          GetStarted.height = value;
                         });
-                        print(height);
+                        print(GetStarted.height);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -237,9 +240,9 @@ class _GetStartedState extends State<GetStarted> {
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
                         setState(() {
-                          weight = value;
+                          GetStarted.weight = value;
                         });
-                        print(weight);
+                        print(GetStarted.weight);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -276,9 +279,9 @@ class _GetStartedState extends State<GetStarted> {
                         style: TextStyle(fontSize: 25),
                       onChanged: (value) {
                         setState(() {
-                          phno = value;
+                          GetStarted.phno = value;
                         });
-                        print(phno);
+                        print(GetStarted.phno);
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
