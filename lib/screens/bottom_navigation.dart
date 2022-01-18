@@ -1,5 +1,6 @@
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:fitegrate_project/screens/profile.dart';
+import 'package:fitegrate_project/screens/report.dart';
 import 'package:flutter/material.dart';
 
 const TextStyle optionStyle =
@@ -19,7 +20,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   List<Widget> _widgetOptions = <Widget>[
     DashBoard(),
-    PageOne(),
+    Report(),
     PageOne(),
     Profile(),
   ];
