@@ -17,12 +17,20 @@ class GetStarted extends StatefulWidget {
 }
 
 class _GetStartedState extends State<GetStarted> {
-  // final _formKey = GlobalKey<FormState>();
+   final _formKey = GlobalKey<FormState>();
   bool _isloading = false;
   //static String name='Null',gender= 'Null',age='Null',height='Null',weight='Null',phno='Null';
 
   confirm_details() async {
-    Map<String, String> basicinfoMap = {
+
+    if (_formKey.currentState!.validate()) {
+      // If the form is valid, display a snackbar. In the real world,
+      // you'd often call a server or save the information in a database.
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Processing Data')),
+      );
+
+       Map<String, String> basicinfoMap = {
       "name": GetStarted.name,
       "age": GetStarted.age,
       "gender": GetStarted.gender,
@@ -38,6 +46,9 @@ class _GetStartedState extends State<GetStarted> {
     });
 
     Navigator.pushReplacementNamed(context, 'BottomNavigation');
+    }
+
+   
   }
 
   @override
@@ -63,6 +74,7 @@ class _GetStartedState extends State<GetStarted> {
             )
           : Center(
               child: Form(
+                key: _formKey,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -92,8 +104,12 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your name" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -140,8 +156,12 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your age" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -188,8 +208,12 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your gender" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -236,8 +260,12 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your height" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -284,8 +312,12 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your weight" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -332,9 +364,12 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) => value!.isEmpty
-                                    ? "Enter your phone number"
-                                    : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
