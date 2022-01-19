@@ -304,15 +304,16 @@ class _SpotJogState extends State<SpotJog> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'CrossToeTouch');
+                Navigator.pushReplacementNamed(context, 'CrossToeTouch');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,
               iconSize: 30,
             ),
           ),
-            SizedBox(height: 10,),
-
+          SizedBox(
+            height: 10,
+          ),
         ],
       ),
     );

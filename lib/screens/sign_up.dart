@@ -311,7 +311,7 @@ bool _issecure2=true;
                         fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'SignIn'),
+                    onTap: () => Navigator.pushReplacementNamed(context, 'SignIn'),
                     child: Container(
                       child: Text(
                         'Sign In',
