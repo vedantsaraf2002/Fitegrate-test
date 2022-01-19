@@ -82,11 +82,7 @@ class _GetStartedState extends State<GetStarted> {
                               child: Text(
                                 'Name',
                                 style: TextStyle(
-<<<<<<< HEAD
-                                  fontSize: 23,
-=======
                                   fontSize: 20,
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                   color: Colors.black,
                                 ),
                               ),
@@ -99,11 +95,7 @@ class _GetStartedState extends State<GetStarted> {
                                 validator: (value) =>
                                     value!.isEmpty ? "Enter your name" : null,
                                 style: TextStyle(
-<<<<<<< HEAD
-                                    fontSize: 23, color: Colors.black),
-=======
                                     fontSize: 20, color: Colors.black),
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                 onChanged: (value) {
                                   setState(() {
                                     GetStarted.name = value;
@@ -138,11 +130,7 @@ class _GetStartedState extends State<GetStarted> {
                               child: Text(
                                 'Age',
                                 style: TextStyle(
-<<<<<<< HEAD
-                                  fontSize: 23,
-=======
                                   fontSize: 20,
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                   color: Colors.black,
                                 ),
                               ),
@@ -155,11 +143,7 @@ class _GetStartedState extends State<GetStarted> {
                                 validator: (value) =>
                                     value!.isEmpty ? "Enter your age" : null,
                                 style: TextStyle(
-<<<<<<< HEAD
-                                    fontSize: 23, color: Colors.black),
-=======
                                     fontSize: 20, color: Colors.black),
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                 onChanged: (value) {
                                   setState(() {
                                     GetStarted.age = value;
@@ -194,11 +178,7 @@ class _GetStartedState extends State<GetStarted> {
                               child: Text(
                                 'Gender',
                                 style: TextStyle(
-<<<<<<< HEAD
-                                  fontSize: 23,
-=======
                                   fontSize: 20,
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                   color: Colors.black,
                                 ),
                               ),
@@ -211,11 +191,7 @@ class _GetStartedState extends State<GetStarted> {
                                 validator: (value) =>
                                     value!.isEmpty ? "Enter your gender" : null,
                                 style: TextStyle(
-<<<<<<< HEAD
-                                    fontSize: 23, color: Colors.black),
-=======
                                     fontSize: 20, color: Colors.black),
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                 onChanged: (value) {
                                   setState(() {
                                     GetStarted.gender = value;
@@ -248,15 +224,9 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.4,
                               child: Text(
-<<<<<<< HEAD
-                                'Height (cm)',
-                                style: TextStyle(
-                                  fontSize: 23,
-=======
                                 'Height(cm)',
                                 style: TextStyle(
                                   fontSize: 20,
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                   color: Colors.black,
                                 ),
                               ),
@@ -269,11 +239,7 @@ class _GetStartedState extends State<GetStarted> {
                                 validator: (value) =>
                                     value!.isEmpty ? "Enter your height" : null,
                                 style: TextStyle(
-<<<<<<< HEAD
-                                    fontSize: 23, color: Colors.black),
-=======
                                     fontSize: 20, color: Colors.black),
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                 onChanged: (value) {
                                   setState(() {
                                     GetStarted.height = value;
@@ -306,15 +272,9 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.4,
                               child: Text(
-<<<<<<< HEAD
-                                'Weight (kg)',
-                                style: TextStyle(
-                                  fontSize: 23,
-=======
                                 'Weight(kg)',
                                 style: TextStyle(
                                   fontSize: 20,
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                   color: Colors.black,
                                 ),
                               ),
@@ -327,11 +287,7 @@ class _GetStartedState extends State<GetStarted> {
                                 validator: (value) =>
                                     value!.isEmpty ? "Enter your weight" : null,
                                 style: TextStyle(
-<<<<<<< HEAD
-                                    fontSize: 23, color: Colors.black),
-=======
                                     fontSize: 20, color: Colors.black),
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                 onChanged: (value) {
                                   setState(() {
                                     GetStarted.weight = value;
@@ -366,11 +322,7 @@ class _GetStartedState extends State<GetStarted> {
                               child: Text(
                                 'Ph number',
                                 style: TextStyle(
-<<<<<<< HEAD
-                                  fontSize: 23,
-=======
                                   fontSize: 20,
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                   color: Colors.black,
                                 ),
                               ),
@@ -384,11 +336,7 @@ class _GetStartedState extends State<GetStarted> {
                                     ? "Enter your phone number"
                                     : null,
                                 style: TextStyle(
-<<<<<<< HEAD
-                                    fontSize: 23, color: Colors.black),
-=======
                                     fontSize: 20, color: Colors.black),
->>>>>>> 49a49d60fc5d0e415de848321ef0918250a635ab
                                 onChanged: (value) {
                                   setState(() {
                                     GetStarted.phno = value;
