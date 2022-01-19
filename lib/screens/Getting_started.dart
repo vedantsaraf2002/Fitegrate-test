@@ -2,6 +2,7 @@ import 'package:fitegrate_project/provider/Database.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({Key? key}) : super(key: key);
@@ -110,6 +111,8 @@ class _GetStartedState extends State<GetStarted> {
                                   }
                                   return null;
                                 },
+                                maxLength: 50,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -120,6 +123,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.name,
@@ -162,6 +166,8 @@ class _GetStartedState extends State<GetStarted> {
                                   }
                                   return null;
                                 },
+                                 maxLength: 2,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -172,6 +178,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -214,6 +221,8 @@ class _GetStartedState extends State<GetStarted> {
                                   }
                                   return null;
                                 },
+                                 maxLength: 15,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -224,6 +233,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.name,
@@ -266,6 +276,8 @@ class _GetStartedState extends State<GetStarted> {
                                   }
                                   return null;
                                 },
+                                 maxLength: 3,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -276,6 +288,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -318,6 +331,8 @@ class _GetStartedState extends State<GetStarted> {
                                   }
                                   return null;
                                 },
+                                 maxLength: 3,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -328,6 +343,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -342,6 +358,7 @@ class _GetStartedState extends State<GetStarted> {
                         height: size.height * 0.065,
                         width: size.width * 0.8,
                         decoration: BoxDecoration(
+                          
                           color: Colors.orange[300],
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -360,16 +377,19 @@ class _GetStartedState extends State<GetStarted> {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.only(left: 155),
+                              padding: EdgeInsets.only(left: 155,),
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
+                              
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return 'Please enter some text';
                                   }
                                   return null;
                                 },
+                                 maxLength: 10,
+                                //maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -380,6 +400,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                  counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -389,6 +410,8 @@ class _GetStartedState extends State<GetStarted> {
                           ],
                         ),
                       ),
+
+
                       SizedBox(height: 40),
                       Container(
                         height: size.height * 0.065,
