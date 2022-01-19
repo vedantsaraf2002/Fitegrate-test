@@ -301,16 +301,16 @@ class _AnkleCircleState extends State<AnkleCircle> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'IYTActivation');
+                Navigator.pushReplacementNamed(context, 'IYTActivation');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,
               iconSize: 30,
             ),
           ),
-
-            SizedBox(height: 10,),
-
+          SizedBox(
+            height: 10,
+          ),
         ],
       ),
     );
