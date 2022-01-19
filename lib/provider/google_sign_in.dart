@@ -42,8 +42,7 @@ if(SignIn.isLoginwith==false){
 await FirebaseAuth.instance.signOut();
 await googleSignIn.disconnect();
 
-  
-}
+  }
   
 
   
