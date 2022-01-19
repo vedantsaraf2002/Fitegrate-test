@@ -37,7 +37,7 @@ class _GetStartedState extends State<GetStarted> {
       });
     });
 
-    Navigator.pushNamed(context, 'BottomNavigation');
+    Navigator.pushReplacementNamed(context, 'BottomNavigation');
   }
 
   @override

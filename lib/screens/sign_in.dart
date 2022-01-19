@@ -180,7 +180,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, 'newforgotpassword'),
+                onTap: () => Navigator.pushReplacementNamed(context, 'newforgotpassword'),
                 child: Container(
                   child: Text(
                     'Forgot Password',
@@ -242,7 +242,7 @@ class _SignInState extends State<SignIn> {
                         fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'SignUp'),
+                    onTap: () => Navigator.pushReplacementNamed(context, 'SignUp'),
                     child: Container(
                       child: Text(
                         'Sign Up',
