@@ -298,7 +298,7 @@ class _DonkeyKicksState extends State<DonkeyKicks> {
           ),
           FloatingActionButton.extended(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, 'VideoAssessmentBalance');
+              Navigator.pushNamed(context, 'VideoAssessmentBalance');
             },
             label: Text(
               'Proceed to Video Assessment',

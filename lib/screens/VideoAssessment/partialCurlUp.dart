@@ -335,7 +335,7 @@ class _VideoAssessmentPartialCurlUpState
               radius: 30,
               child: IconButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(
+                  Navigator.pushNamed(
                       context, 'VideoAssessmentPushUp');
                 },
                 icon: Icon(Icons.arrow_forward),
