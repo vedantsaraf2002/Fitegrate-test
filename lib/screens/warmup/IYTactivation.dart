@@ -301,16 +301,15 @@ class _IYTActivationState extends State<IYTActivation> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'WalkingKneeHugs');
+                Navigator.pushNamed(context, 'WalkingKneeHugs');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,
               iconSize: 30,
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
+            SizedBox(height: 10,),
+
         ],
       ),
     );

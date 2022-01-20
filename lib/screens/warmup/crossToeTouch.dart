@@ -100,6 +100,9 @@ class _CrossToeTouchState extends State<CrossToeTouch> {
               ),
             ),
           ),
+
+
+          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -247,6 +250,9 @@ class _CrossToeTouchState extends State<CrossToeTouch> {
               ),
             ],
           ),
+
+
+
           Container(
             height: size.height * 0.35,
             width: size.width * 0.9,
@@ -301,16 +307,15 @@ class _CrossToeTouchState extends State<CrossToeTouch> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'ShoulderRotation');
+                Navigator.pushNamed(context, 'ShoulderRotation');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,
               iconSize: 30,
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
+            SizedBox(height: 10,),
+
         ],
       ),
     );
