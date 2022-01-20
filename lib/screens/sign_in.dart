@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
-import 'package:fitegrate_project/screens/dashboard.dart';
 
 import 'package:fitegrate_project/screens/home.dart';
 
@@ -181,7 +180,7 @@ class _SignInState extends State<SignIn> {
               ),
 
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, 'newforgotpassword'),
+                onTap: () => Navigator.pushReplacementNamed(context, 'newforgotpassword'),
                 child: Container(
                   child: Text(
                     'Forgot Password',
@@ -243,7 +242,7 @@ class _SignInState extends State<SignIn> {
                         fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'SignUp'),
+                    onTap: () => Navigator.pushReplacementNamed(context, 'SignUp'),
                     child: Container(
                       child: Text(
                         'Sign Up',
@@ -276,7 +275,7 @@ class _SignInState extends State<SignIn> {
 SignIn.isLoginwith=true;
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()), 
+            MaterialPageRoute(builder: (context) => HomePage()),
           );
         });
       }

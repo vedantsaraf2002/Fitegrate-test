@@ -1,6 +1,6 @@
 # fitegrate_project
 
-A new Flutter project for minor
+A new Flutter project.
 
 ## Getting Started
 

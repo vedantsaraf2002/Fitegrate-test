@@ -1,14 +1,14 @@
-import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitegrate_project/screens/Getting_started.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 
 class DatabaseService{
 
     var uid;
-    
     // DatabaseService({ required this.uid});
 
    // final CollectionReference Users = FirebaseFirestore.instance.collection('Users');
@@ -39,11 +39,20 @@ class DatabaseService{
     //     });
     // }
     Future<void> addBasicData (Map<String,String> basicInfo) async {
+     
+        String userId = FirebaseAuth.instance.currentUser!.uid;
          await FirebaseFirestore.instance
             .collection("Users")
-            .doc(uid)
-            .collection("Info")
-            .add(basicInfo)
+            .doc(userId)
+          .set({
+            'Full name': GetStarted.name,
+            'Age':GetStarted.age,
+            'Gender':GetStarted.gender,
+            'Height':GetStarted.height,
+            'Weight':GetStarted.weight,
+            'Phone_Number':GetStarted.phno,
+          })
+            //.add(basicInfo)
             .catchError((e){print(e.toString());
             });
     }

@@ -253,7 +253,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'HealthAssessment');
+                        Navigator.pushReplacementNamed(context, 'HealthAssessment');
                         
                       },
                       child: Padding(
@@ -281,7 +281,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'PreRequisite');
+                        Navigator.pushReplacementNamed(context, 'PreRequisite');
                         
                       },
                       child: Padding(

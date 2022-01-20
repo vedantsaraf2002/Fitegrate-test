@@ -83,49 +83,6 @@ bool _issecure2=true;
                 height: size.height * 0.02,
               ),
 
-
-              Container(
-                height: size.height * 0.065,
-                width: size.width * 0.8,
-                decoration: BoxDecoration(
-                  color: Colors.orange[300],
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Center(
-                  child: TextField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      prefixIcon: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Icon(
-                          Icons.person_outline,
-                          size: 28,
-                          color: Colors.black87,
-                        ),
-                      ),
-
-                      hintText: 'Name',
-                      hintStyle: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                    keyboardType: TextInputType.emailAddress,
-                     cursorColor: Colors.black,
-                    textInputAction: TextInputAction.next,
-                  ),
-                ),
-              ),
-
-            
-
-             
             
 
               SizedBox(
@@ -311,7 +268,7 @@ bool _issecure2=true;
                         fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'SignIn'),
+                    onTap: () => Navigator.pushReplacementNamed(context, 'SignIn'),
                     child: Container(
                       child: Text(
                         'Sign In',

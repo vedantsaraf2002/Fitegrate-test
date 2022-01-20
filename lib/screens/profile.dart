@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
+import 'package:fitegrate_project/screens/sign_in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,8 +31,14 @@ class _ProfileState extends State<Profile> {
               final provider =
                   Provider.of<GoogleSignInProvider>(context, listen: false);
               provider.logout();
-
-              Navigator.pushNamed(context, 'SignIn');
+            Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => SignIn(),
+      ),
+      (route) => false,
+    );
+             // Navigator.pushReplacementNamed(context, 'SignIn');
             },
           )
         ],
