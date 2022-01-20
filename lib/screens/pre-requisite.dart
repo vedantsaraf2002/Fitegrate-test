@@ -121,7 +121,7 @@ class _PreRequisiteState extends State<PreRequisite> {
               ),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, 'SpotJog');
+                  Navigator.pushNamed(context, 'SpotJog');
                 },
                 child: Text(
                   'Start',

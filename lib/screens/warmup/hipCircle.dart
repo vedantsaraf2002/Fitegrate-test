@@ -301,16 +301,15 @@ class _HipCircleState extends State<HipCircle> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'AnkleCircle');
+                Navigator.pushNamed(context, 'AnkleCircle');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,
               iconSize: 30,
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
+            SizedBox(height: 10,),
+
         ],
       ),
     );
