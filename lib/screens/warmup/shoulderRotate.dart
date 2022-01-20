@@ -301,7 +301,7 @@ class _ShoulderRotationState extends State<ShoulderRotation> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'FullArmCircles');
+                Navigator.pushNamed(context, 'FullArmCircles');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,

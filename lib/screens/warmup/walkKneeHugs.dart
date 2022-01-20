@@ -301,7 +301,7 @@ class _WalkingKneeHugsState extends State<WalkingKneeHugs> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'WalkingHip');
+                Navigator.pushNamed(context, 'WalkingHip');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,

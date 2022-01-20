@@ -100,7 +100,7 @@ class _NewForgotPasswordState extends State<NewForgotPassword> {
                   child: TextButton(
                     onPressed: () async {
                       resetPassword();
-                      Navigator.pushReplacementNamed(context, 'SignIn');
+                      Navigator.pushNamed(context, 'SignIn');
                     },
                     child: Text(
                       'Submit',

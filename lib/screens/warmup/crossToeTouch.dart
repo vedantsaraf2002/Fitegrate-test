@@ -301,7 +301,7 @@ class _CrossToeTouchState extends State<CrossToeTouch> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'ShoulderRotation');
+                Navigator.pushNamed(context, 'ShoulderRotation');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,

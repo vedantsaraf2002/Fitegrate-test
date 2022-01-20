@@ -301,7 +301,7 @@ class _AnkleCircleState extends State<AnkleCircle> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, 'IYTActivation');
+                Navigator.pushNamed(context, 'IYTActivation');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,

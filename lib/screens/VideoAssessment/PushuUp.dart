@@ -333,7 +333,7 @@ class _VideoAssessmentPushUpState extends State<VideoAssessmentPushUp> {
               radius: 30,
               child: IconButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(
+                  Navigator.pushNamed(
                       context, 'VideoAssessmentRunTest');
                 },
                 icon: Icon(Icons.arrow_forward),
