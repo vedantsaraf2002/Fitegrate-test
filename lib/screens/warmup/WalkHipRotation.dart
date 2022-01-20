@@ -301,15 +301,16 @@ class _WalkingHipState extends State<WalkingHip> {
             radius: 30,
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'LegRaise');
+                Navigator.pushReplacementNamed(context, 'LegRaise');
               },
               icon: Icon(Icons.arrow_forward),
               color: Colors.black87,
               iconSize: 30,
             ),
           ),
-            SizedBox(height: 10,),
-
+          SizedBox(
+            height: 10,
+          ),
         ],
       ),
     );

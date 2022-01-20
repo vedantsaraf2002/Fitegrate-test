@@ -298,7 +298,7 @@ class _DonkeyKicksState extends State<DonkeyKicks> {
           ),
           FloatingActionButton.extended(
             onPressed: () {
-              Navigator.pushNamed(context, 'VideoAssessmentBalance');
+              Navigator.pushReplacementNamed(context, 'VideoAssessmentBalance');
             },
             label: Text(
               'Proceed to Video Assessment',
@@ -308,7 +308,9 @@ class _DonkeyKicksState extends State<DonkeyKicks> {
             backgroundColor: Colors.grey[300]!,
           ),
 
-            SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
 
           // CircleAvatar(
           //   backgroundColor: Colors.grey[300]!,

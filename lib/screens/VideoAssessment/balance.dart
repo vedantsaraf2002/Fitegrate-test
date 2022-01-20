@@ -77,8 +77,8 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
               ),
             ),
             Container(
-              height: size.height*0.4,
-              width: size.width*0.9,
+              height: size.height * 0.4,
+              width: size.width * 0.9,
               child: FutureBuilder(
                 future: _initializeVideoPlayerFuture,
                 builder: (context, snapshot) {
@@ -119,257 +119,246 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
                 _video_controller.value.isPlaying
                     ? Icons.pause
                     : Icons.play_arrow,
-
-                    color: Colors.black,
+                color: Colors.black,
               ),
               backgroundColor: Colors.orange[400],
             ),
 
+            //    FloatingActionButton.extended(
+            //   label: Icon(
+            //     _video_controller.value.isPlaying
+            //         ? Icons.pause
+            //         : Icons.play_arrow,
+            //   ),
+            //   backgroundColor: Colors.orange[400],
+            //   onPressed: () {
+            //     setState(() {
+            //       // If the video is playing, pause it.
+            //       if (_video_controller.value.isPlaying) {
+            //         _video_controller.pause();
+            //       } else {
+            //         // If the video is paused, play it.
+            //         _video_controller.play();
+            //       }
+            //     });
+            //   },
+            // ),
 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircularCountDownTimer(
+                  // Countdown duration in Seconds.
+                  duration: _duration,
 
-          //    FloatingActionButton.extended(
-          //   label: Icon(
-          //     _video_controller.value.isPlaying
-          //         ? Icons.pause
-          //         : Icons.play_arrow,
-          //   ),
-          //   backgroundColor: Colors.orange[400],
-          //   onPressed: () {
-          //     setState(() {
-          //       // If the video is playing, pause it.
-          //       if (_video_controller.value.isPlaying) {
-          //         _video_controller.pause();
-          //       } else {
-          //         // If the video is paused, play it.
-          //         _video_controller.play();
-          //       }
-          //     });
-          //   },
-          // ),
+                  // Countdown initial elapsed Duration in Seconds.
+                  initialDuration: 0,
 
+                  // Controls (i.e Start, Pause, Resume, Restart) the Countdown Timer.
+                  controller: _controller,
 
+                  // Width of the Countdown Widget.
+                  width: MediaQuery.of(context).size.width / 4,
 
- Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CircularCountDownTimer(
-                // Countdown duration in Seconds.
-                duration: _duration,
+                  // Height of the Countdown Widget.
+                  height: MediaQuery.of(context).size.height / 4,
 
-                // Countdown initial elapsed Duration in Seconds.
-                initialDuration: 0,
+                  // Ring Color for Countdown Widget.
+                  ringColor: Colors.grey[300]!,
 
-                // Controls (i.e Start, Pause, Resume, Restart) the Countdown Timer.
-                controller: _controller,
+                  // Ring Gradient for Countdown Widget.
+                  ringGradient: null,
 
-                // Width of the Countdown Widget.
-                width: MediaQuery.of(context).size.width / 4,
+                  // Filling Color for Countdown Widget.
+                  fillColor: Colors.black87,
 
-                // Height of the Countdown Widget.
-                height: MediaQuery.of(context).size.height / 4,
+                  // Filling Gradient for Countdown Widget.
+                  fillGradient: null,
 
-                // Ring Color for Countdown Widget.
-                ringColor: Colors.grey[300]!,
+                  // Background Color for Countdown Widget.
+                  backgroundColor: Colors.orange[400],
 
-                // Ring Gradient for Countdown Widget.
-                ringGradient: null,
+                  // Background Gradient for Countdown Widget.
+                  backgroundGradient: null,
 
-                // Filling Color for Countdown Widget.
-                fillColor: Colors.black87,
+                  // Border Thickness of the Countdown Ring.
+                  strokeWidth: 7.0,
 
-                // Filling Gradient for Countdown Widget.
-                fillGradient: null,
+                  // Begin and end contours with a flat edge and no extension.
+                  strokeCap: StrokeCap.round,
 
-                // Background Color for Countdown Widget.
-                backgroundColor: Colors.orange[400],
+                  // Text Style for Countdown Text.
+                  textStyle: TextStyle(
+                      fontSize: 33.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
 
-                // Background Gradient for Countdown Widget.
-                backgroundGradient: null,
+                  // Format for the Countdown Text.
+                  textFormat: CountdownTextFormat.S,
 
-                // Border Thickness of the Countdown Ring.
-                strokeWidth: 7.0,
+                  // Handles Countdown Timer (true for Reverse Countdown (max to 0), false for Forward Countdown (0 to max)).
+                  isReverse: false,
 
-                // Begin and end contours with a flat edge and no extension.
-                strokeCap: StrokeCap.round,
+                  // Handles Animation Direction (true for Reverse Animation, false for Forward Animation).
+                  isReverseAnimation: false,
 
-                // Text Style for Countdown Text.
-                textStyle: TextStyle(
-                    fontSize: 33.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+                  // Handles visibility of the Countdown Text.
+                  isTimerTextShown: true,
 
-                // Format for the Countdown Text.
-                textFormat: CountdownTextFormat.S,
+                  // Handles the timer start.
+                  autoStart: false,
 
-                // Handles Countdown Timer (true for Reverse Countdown (max to 0), false for Forward Countdown (0 to max)).
-                isReverse: false,
+                  // This Callback will execute when the Countdown Starts.
+                  onStart: () {
+                    // Here, do whatever you want
+                    print('Countdown Started');
+                  },
 
-                // Handles Animation Direction (true for Reverse Animation, false for Forward Animation).
-                isReverseAnimation: false,
-
-                // Handles visibility of the Countdown Text.
-                isTimerTextShown: true,
-
-                // Handles the timer start.
-                autoStart: false,
-
-                // This Callback will execute when the Countdown Starts.
-                onStart: () {
-                  // Here, do whatever you want
-                  print('Countdown Started');
-                },
-
-                // This Callback will execute when the Countdown Ends.
-                onComplete: () {
-                  // Here, do whatever you want
-                  print('Countdown Ended');
-                },
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        color: Colors.grey[300]!,
-                        child: TextButton(
-                          child: Text(
-                            'Start',
-                            style: TextStyle(
-                                color: Colors.black87, fontSize: 17.5),
+                  // This Callback will execute when the Countdown Ends.
+                  onComplete: () {
+                    // Here, do whatever you want
+                    print('Countdown Ended');
+                  },
+                ),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          color: Colors.grey[300]!,
+                          child: TextButton(
+                            child: Text(
+                              'Start',
+                              style: TextStyle(
+                                  color: Colors.black87, fontSize: 17.5),
+                            ),
+                            onPressed: () => _controller.start(),
+                            //color: Colors.purple,
                           ),
-                          onPressed: () => _controller.start(),
-                          //color: Colors.purple,
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        color: Colors.grey[300]!,
-                        child: TextButton(
-                          child: Text(
-                            'Pause',
-                            style: TextStyle(
-                                color: Colors.black87, fontSize: 17.5),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          color: Colors.grey[300]!,
+                          child: TextButton(
+                            child: Text(
+                              'Pause',
+                              style: TextStyle(
+                                  color: Colors.black87, fontSize: 17.5),
+                            ),
+                            onPressed: () => _controller.pause(),
+                            //color: Colors.purple,
                           ),
-                          onPressed: () => _controller.pause(),
-                          //color: Colors.purple,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        color: Colors.grey[300]!,
-                        child: TextButton(
-                          child: Text(
-                            'Resume',
-                            style: TextStyle(
-                                color: Colors.black87, fontSize: 17.5),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          color: Colors.grey[300]!,
+                          child: TextButton(
+                            child: Text(
+                              'Resume',
+                              style: TextStyle(
+                                  color: Colors.black87, fontSize: 17.5),
+                            ),
+                            onPressed: () => _controller.resume(),
+                            //color: Colors.purple,
                           ),
-                          onPressed: () => _controller.resume(),
-                          //color: Colors.purple,
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        color: Colors.grey[300]!,
-                        child: TextButton(
-                          child: Text(
-                            'Restart',
-                            style: TextStyle(
-                                color: Colors.black87, fontSize: 17.5),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          color: Colors.grey[300]!,
+                          child: TextButton(
+                            child: Text(
+                              'Restart',
+                              style: TextStyle(
+                                  color: Colors.black87, fontSize: 17.5),
+                            ),
+                            onPressed: () => _controller.restart(),
+                            //color: Colors.purple,
                           ),
-                          onPressed: () => _controller.restart(),
-                          //color: Colors.purple,
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-
-
-
-
-
-
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
 
             // CircularCountDownTimer(
             //   // Countdown duration in Seconds.
             //   duration: _duration,
-    
+
             //   // Countdown initial elapsed Duration in Seconds.
             //   initialDuration: 0,
-    
+
             //   // Controls (i.e Start, Pause, Resume, Restart) the Countdown Timer.
             //   controller: _controller,
-    
+
             //   // Width of the Countdown Widget.
             //   width: MediaQuery.of(context).size.width / 4,
-    
+
             //   // Height of the Countdown Widget.
             //   height: MediaQuery.of(context).size.height / 4,
-    
+
             //   // Ring Color for Countdown Widget.
             //   ringColor: Colors.grey[300]!,
-    
+
             //   // Ring Gradient for Countdown Widget.
             //   ringGradient: null,
-    
+
             //   // Filling Color for Countdown Widget.
             //   fillColor: Colors.purpleAccent[100]!,
-    
+
             //   // Filling Gradient for Countdown Widget.
             //   fillGradient: null,
-    
+
             //   // Background Color for Countdown Widget.
             //   backgroundColor: Colors.orange[400],
-    
+
             //   // Background Gradient for Countdown Widget.
             //   backgroundGradient: null,
-    
+
             //   // Border Thickness of the Countdown Ring.
             //   strokeWidth: 7.0,
-    
+
             //   // Begin and end contours with a flat edge and no extension.
             //   strokeCap: StrokeCap.round,
-    
+
             //   // Text Style for Countdown Text.
             //   textStyle: TextStyle(
             //       fontSize: 33.0,
             //       color: Colors.white,
             //       fontWeight: FontWeight.bold),
-    
+
             //   // Format for the Countdown Text.
             //   textFormat: CountdownTextFormat.S,
-    
+
             //   // Handles Countdown Timer (true for Reverse Countdown (max to 0), false for Forward Countdown (0 to max)).
             //   isReverse: false,
-    
+
             //   // Handles Animation Direction (true for Reverse Animation, false for Forward Animation).
             //   isReverseAnimation: false,
-    
+
             //   // Handles visibility of the Countdown Text.
             //   isTimerTextShown: true,
-    
+
             //   // Handles the timer start.
             //   autoStart: false,
-    
+
             //   // This Callback will execute when the Countdown Starts.
             //   onStart: () {
             //     // Here, do whatever you want
             //     print('Countdown Started');
             //   },
-    
+
             //   // This Callback will execute when the Countdown Ends.
             //   onComplete: () {
             //     // Here, do whatever you want
@@ -397,12 +386,12 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
             //           onPressed: () => _controller.start(),
             //           //color: Colors.purple,
             //         )),
-    
+
             //         // _button(title: "Start", onPressed: () => _controller.start()),
             //         SizedBox(
             //           width: 5,
             //         ),
-    
+
             //         Expanded(
             //             child: TextButton(
             //           child: Text(
@@ -425,7 +414,7 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
             //         SizedBox(
             //           width: 5,
             //         ),
-    
+
             //         Expanded(
             //             child: TextButton(
             //           child: Text(
@@ -439,7 +428,7 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
             //         SizedBox(
             //           width: 5,
             //         ),
-    
+
             //         Expanded(
             //             child: TextButton(
             //           child: Text(
@@ -456,7 +445,6 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
             //     ),
             //   ],
             // ),
-
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -480,18 +468,13 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
                 ),
               ],
             ),
-    
-    
-    
-    
-    
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                   child: Container(
-                    
                     //margin: EdgeInsets.all(8),
                     color: Colors.orange[400],
                     child: Padding(
@@ -522,16 +505,13 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
                 ),
               ],
             ),
-    
-    
-    
-             Row(
+
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                   child: Container(
-                    
                     //margin: EdgeInsets.all(8),
                     color: Colors.orange[400],
                     child: Padding(
@@ -562,17 +542,13 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
                 ),
               ],
             ),
-    
-    
-    
-    
-             Row(
+
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                   child: Container(
-                    
                     //margin: EdgeInsets.all(8),
                     color: Colors.orange[400],
                     child: Padding(
@@ -603,17 +579,13 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
                 ),
               ],
             ),
-    
-    
-    
-    
-             Row(
+
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
                   child: Container(
-                   
                     //margin: EdgeInsets.all(8),
                     color: Colors.orange[400],
                     child: Padding(
@@ -646,22 +618,22 @@ class _VideoAssessmentBalanceState extends State<VideoAssessmentBalance> {
             ),
 
             CircleAvatar(
-            backgroundColor: Colors.grey[300]!,
-            radius: 30,
-            child: IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'VideoAssessmentSitAndReach');
-              },
-              icon: Icon(Icons.arrow_forward),
-              color: Colors.black87,
-              iconSize: 30,
+              backgroundColor: Colors.grey[300]!,
+              radius: 30,
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                      context, 'VideoAssessmentSitAndReach');
+                },
+                icon: Icon(Icons.arrow_forward),
+                color: Colors.black87,
+                iconSize: 30,
+              ),
             ),
-          ),
 
-  SizedBox(height: 10,),
-
-             
-            
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
