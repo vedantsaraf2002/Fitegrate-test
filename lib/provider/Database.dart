@@ -1,14 +1,19 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
+
 
 class DatabaseService{
 
     var uid;
+    
     // DatabaseService({ required this.uid});
 
    // final CollectionReference Users = FirebaseFirestore.instance.collection('Users');
@@ -40,7 +45,9 @@ class DatabaseService{
     // }
     Future<void> addBasicData (Map<String,String> basicInfo) async {
      
-        String userId = FirebaseAuth.instance.currentUser!.uid;
+         String userId = FirebaseAuth.instance.currentUser!.uid;
+        
+        
          await FirebaseFirestore.instance
             .collection("Users")
             .doc(userId)

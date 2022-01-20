@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
+import 'package:fitegrate_project/screens/dashboard.dart';
 
 import 'package:fitegrate_project/screens/home.dart';
 
@@ -275,7 +276,7 @@ class _SignInState extends State<SignIn> {
 SignIn.isLoginwith=true;
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => Splash()),
+            MaterialPageRoute(builder: (context) => HomePage()), 
           );
         });
       }
