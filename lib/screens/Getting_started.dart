@@ -2,6 +2,7 @@ import 'package:fitegrate_project/provider/Database.dart';
 import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({Key? key}) : super(key: key);
@@ -17,12 +18,20 @@ class GetStarted extends StatefulWidget {
 }
 
 class _GetStartedState extends State<GetStarted> {
-  // final _formKey = GlobalKey<FormState>();
+   final _formKey = GlobalKey<FormState>();
   bool _isloading = false;
   //static String name='Null',gender= 'Null',age='Null',height='Null',weight='Null',phno='Null';
 
   confirm_details() async {
-    Map<String, String> basicinfoMap = {
+
+    if (_formKey.currentState!.validate()) {
+      // If the form is valid, display a snackbar. In the real world,
+      // you'd often call a server or save the information in a database.
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Processing Data')),
+      );
+
+       Map<String, String> basicinfoMap = {
       "name": GetStarted.name,
       "age": GetStarted.age,
       "gender": GetStarted.gender,
@@ -38,6 +47,9 @@ class _GetStartedState extends State<GetStarted> {
     });
 
     Navigator.pushReplacementNamed(context, 'BottomNavigation');
+    }
+
+   
   }
 
   @override
@@ -63,6 +75,7 @@ class _GetStartedState extends State<GetStarted> {
             )
           : Center(
               child: Form(
+                key: _formKey,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -92,8 +105,14 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your name" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
+                                maxLength: 50,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -104,6 +123,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.name,
@@ -140,8 +160,14 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your age" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
+                                 maxLength: 2,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -152,6 +178,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -188,8 +215,14 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your gender" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
+                                 maxLength: 15,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -200,6 +233,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.name,
@@ -236,8 +270,14 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your height" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
+                                 maxLength: 3,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -248,6 +288,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -284,8 +325,14 @@ class _GetStartedState extends State<GetStarted> {
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) =>
-                                    value!.isEmpty ? "Enter your weight" : null,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
+                                 maxLength: 3,
+                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -296,6 +343,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                   counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -310,6 +358,7 @@ class _GetStartedState extends State<GetStarted> {
                         height: size.height * 0.065,
                         width: size.width * 0.8,
                         decoration: BoxDecoration(
+                          
                           color: Colors.orange[300],
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -328,13 +377,19 @@ class _GetStartedState extends State<GetStarted> {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.only(left: 155),
+                              padding: EdgeInsets.only(left: 155,),
                               height: size.height * 0.065,
                               width: size.width * 0.8,
                               child: TextFormField(
-                                validator: (value) => value!.isEmpty
-                                    ? "Enter your phone number"
-                                    : null,
+                              
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter some text';
+                                  }
+                                  return null;
+                                },
+                                 maxLength: 10,
+                                //maxLengthEnforcement: MaxLengthEnforcement.enforced,
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.black),
                                 onChanged: (value) {
@@ -345,6 +400,7 @@ class _GetStartedState extends State<GetStarted> {
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
+                                  counterText: "",
                                   //contentPadding:  EdgeInsets.only(left: 200,top: 10),
                                 ),
                                 keyboardType: TextInputType.number,
@@ -354,6 +410,8 @@ class _GetStartedState extends State<GetStarted> {
                           ],
                         ),
                       ),
+
+
                       SizedBox(height: 40),
                       Container(
                         height: size.height * 0.065,
