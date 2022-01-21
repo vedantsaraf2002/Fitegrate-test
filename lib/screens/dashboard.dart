@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitegrate_project/screens/Getting_started.dart';
+import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -14,19 +14,18 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
-
   @override
   Widget build(BuildContext context) {
     CollectionReference users = FirebaseFirestore.instance.collection('users');
-     final  user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser!;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.orange[400],
-        
+
         //title: Text('Hi, '+ user.displayName!),
-        title: Text('Hi, '+ GetStarted.name),
+        title: Text('Hi, ' + GetStarted.name),
         actions: [
           IconButton(
             onPressed: () {},
@@ -95,7 +94,6 @@ class _DashBoardState extends State<DashBoard> {
                       padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        
                         children: [
                           Text(
                             'WEIGHT: ',
@@ -176,9 +174,7 @@ class _DashBoardState extends State<DashBoard> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 TextButton(
-                                    onPressed: () {
-                                      
-                                    },
+                                    onPressed: () {},
                                     child: Text(
                                       'Cardio',
                                       style: TextStyle(
@@ -204,9 +200,7 @@ class _DashBoardState extends State<DashBoard> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 TextButton(
-                                    onPressed: () {
-                                      
-                                    },
+                                    onPressed: () {},
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           10, 5, 10, 5),
@@ -254,20 +248,16 @@ class _DashBoardState extends State<DashBoard> {
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, 'HealthAssessment');
-                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
-                        
                         child: Text(
                           'Health Assessment', //textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
-                            
                           ),
                           textAlign: TextAlign.center,
-                          
                         ),
                       ),
                     ),
@@ -282,7 +272,6 @@ class _DashBoardState extends State<DashBoard> {
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, 'PreRequisite');
-                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 2, 10, 2),
@@ -316,7 +305,7 @@ class _DashBoardState extends State<DashBoard> {
                   children: [
                     TextButton(
                       onPressed: () {
-                       // Navigator.pushNamed(context, 'BottomNavigation');
+                        // Navigator.pushNamed(context, 'BottomNavigation');
                       },
                       child: Text(
                         'Upcoming Sessions',
@@ -333,6 +322,7 @@ class _DashBoardState extends State<DashBoard> {
           ],
         ),
       ),
+      //bottomNavigationBar: MyStatefulWidget(),
     );
   }
 }

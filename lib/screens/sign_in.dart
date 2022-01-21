@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitegrate_project/provider/google_sign_in.dart';
+import 'package:fitegrate_project/screens/bottom_navigation.dart';
+import 'package:fitegrate_project/screens/dashboard.dart';
 
 import 'package:fitegrate_project/screens/home.dart';
-
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -13,15 +14,15 @@ bool loginwith = false;
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
-  static bool isLoginwith=false;
+  static bool isLoginwith = false;
 
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
-  bool _issecure=true;
- 
+  bool _issecure = true;
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -87,7 +88,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.name,
                     textInputAction: TextInputAction.next,
-                     cursorColor: Colors.black,
+                    cursorColor: Colors.black,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
@@ -111,14 +112,16 @@ class _SignInState extends State<SignIn> {
                   child: TextField(
                     controller: _passwordController,
                     decoration: InputDecoration(
-                      suffixIcon: IconButton(icon: _issecure ? Icon(Icons.visibility_off) : Icon(Icons.visibility), 
-                      onPressed: ()=>
-                      {
-                        setState((){
-                          _issecure=!_issecure;
-
-                        })
-                      },),
+                      suffixIcon: IconButton(
+                        icon: _issecure
+                            ? Icon(Icons.visibility_off)
+                            : Icon(Icons.visibility),
+                        onPressed: () => {
+                          setState(() {
+                            _issecure = !_issecure;
+                          })
+                        },
+                      ),
                       border: InputBorder.none,
                       //contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                       prefixIcon: Padding(
@@ -137,7 +140,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     keyboardType: TextInputType.emailAddress,
                     obscureText: _issecure,
-                     cursorColor: Colors.black,
+                    cursorColor: Colors.black,
                     textInputAction: TextInputAction.next,
                     style: TextStyle(
                       color: Colors.black,
@@ -218,14 +221,10 @@ class _SignInState extends State<SignIn> {
                           context,
                           listen: false);
                       provider.googleLogin();
-                      
                     },
                   ),
-                  
                 ],
               ),
-
-              
 
               SizedBox(
                 height: size.height * 0.02,
@@ -263,7 +262,6 @@ class _SignInState extends State<SignIn> {
   }
 
   _signInWithEmailAndPassword() async {
-    
     try {
       final User? user = (await _firebaseAuth.signInWithEmailAndPassword(
               email: _emailController.text.trim(),
@@ -272,16 +270,15 @@ class _SignInState extends State<SignIn> {
       if (user != null) {
         setState(() {
           Fluttertoast.showToast(msg: "Signed In Sucessfully");
-SignIn.isLoginwith=true;
+          SignIn.isLoginwith = true;
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()),
+            MaterialPageRoute(builder: (context) => MyStatefulWidget()),
           );
         });
       }
     } catch (e) {
       Fluttertoast.showToast(msg: e.toString());
     }
-
   }
 }
