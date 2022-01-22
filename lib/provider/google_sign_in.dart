@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitegrate_project/screens/bottom_navigation.dart';
 import 'package:fitegrate_project/screens/sign_in.dart';
 
 import 'package:flutter/cupertino.dart';
