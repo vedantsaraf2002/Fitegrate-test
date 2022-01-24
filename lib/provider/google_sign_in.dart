@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class GoogleSignInProvider extends ChangeNotifier {
   final googleSignIn = GoogleSignIn();
+  
 
   GoogleSignInAccount? _user;
 
@@ -18,7 +19,6 @@ class GoogleSignInProvider extends ChangeNotifier {
       final googleUser = await googleSignIn.signIn();
       if (googleUser == null) return;
       _user = googleUser;
-
       final googleAuth = await googleUser.authentication;
       final Credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
@@ -34,10 +34,12 @@ class GoogleSignInProvider extends ChangeNotifier {
   Future logout() async {
     if (SignIn.isLoginwith == true) {
       await FirebaseAuth.instance.signOut();
+      // email password logout
     }
     if (SignIn.isLoginwith == false) {
       await FirebaseAuth.instance.signOut();
       await googleSignIn.disconnect();
+    
     }
   }
 }

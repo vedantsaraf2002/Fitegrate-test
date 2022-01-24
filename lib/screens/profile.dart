@@ -34,16 +34,23 @@ class _ProfileState extends State<Profile> {
               style: TextStyle(color: Colors.black),
             ),
             onPressed: () {
-              final provider =
-                  Provider.of<GoogleSignInProvider>(context, listen: false);
-              provider.logout();
-              //         Navigator.pushAndRemoveUntil(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (BuildContext context) => SignIn(),
-              //   ),
-              //   (route) => false,
-              // );
+              if (SignIn.isLoginwith == false) {
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.logout();
+              }
+              if (SignIn.isLoginwith == true) {
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.logout();
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => SignIn(),
+                  ),
+                  (route) => false,
+                );
+              }
               // Navigator.pushReplacementNamed(context, 'SignIn');
             },
           )
